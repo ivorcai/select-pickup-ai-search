@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "划词提交插件",
+    "version": "1.0",
+    "description": "通过划词选中内容提交给本地AI模型处理",
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      }
+    },
+    "commands": {
+      "submit-selection": {
+        "suggested_key": {
+          "default": "Alt+D"
+        },
+        "description": "提交选中内容"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
