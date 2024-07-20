@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 async function processWithAI(text) {
     // 在这里调用异步的AI处理方法
     if (AI == null) {
-        AI = await window.model.createTextSession();
+        AI = await window.ai.createTextSession();
     }
 
     let answer = '';
